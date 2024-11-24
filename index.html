@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in</title>
+    <link rel="icon" href="i.png" type="image/png">
+
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg" alt="amazon"></a>
+        </div>
+        <div class="location-dropdown">
+            <select>
+                <option value="us">Select Your Location</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+                <option value="de">Germany</option>
+            </select>
+        </div>
+        <div class="search-container">
+            <select class="category-dropdown">
+                <option value="all">All</option>
+                <option value="books">Books</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="toys">Toys & Games</option>
+                <option value="grocery">Grocery</option>
+                <option value="computers">Computers</option>
+                <option value="health">Health & Personal Care</option>
+                <option value="sports">Sports & Outdoors</option>
+                <option value="automotive">Automotive</option>
+                <option value="baby">Baby</option>
+                <option value="music">Music</option>
+                <option value="video">Video Games</option>
+                <option value="pet">Pet Supplies</option>
+                <option value="tools">Tools & Home Improvement</option>
+            </select>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Amazon" />
+                <button type="submit">Search</button>
+            </div>
+        </div>
+        <div class="language-cart">
+            <select class="language-dropdown">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+            </select>
+            <a href="#" class="signin">Sign In</a>
+            <a href="#" class="login">Login</a>
+            <a href="#" class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                    <path d="M7 4V2H1v2h2l3.6 7.59-1.1 2.45C5.4 14.1 4 15.5 4 17c0 2.21 1.79 4 4 4s4-1.79 4-4H8c0 1.1-.9 2-2 2s-2-.9-2-2c0-.55.45-1 1-1h11c.55 0 1 .45 1 1s-.45 1-1 1h-1c0 1.1-.9 2-2 2s-2-.9-2-2h4c1.1 0 2-.9 2-2 0-.29-.06-.56-.16-.82l1.29-2.87H7zm0 2h9.9l1.6 3.5H7V6zm0 8h9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2H7c0 1.1-.9 2-2 2s-2-.9-2-2c0-1.1.9-2 2-2z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    <nav class="nav-links" id="topnav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Today's Deals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Mobiles</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="https://www.primevideo.com/">Prime</a></li>
+            <li><a href="reuse.html">Repair</a></li>
+            <li><a href="marketplace.html">Resale Marketplace</a></li>
+            <li><a href="helper.html">Amazon Helper</a></li>
+            <li><a href="credits.html">credits</a></li>
+        </ul>
+    </nav>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="./c1.jpg" alt="Image 1" class="active">
+            <img src="./c2.jpg" alt="Image 2">
+            <img src="./c3.jpg" alt="Image 3">
+            <img src="./c4.jpg" alt="Image 4"> 
+            <img src="./c5.jpg" alt="Image 5">
+            <img src="./c6.jpg" alt="Image 6">
+            <img src="./c7.jpg" alt="Image 7">
+        </div>
+        <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="product-cards">
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/61vwZ-sEhRL._AC_UL480_FMwebp_QL65_.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Price: $19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="lights.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Price: $29.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71nW6Xh7QnL._AC_UL480_FMwebp_QL65_.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Price: $39.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Explore_brands/v2/Peora_434x652._CB560003153_.png" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Price: $49.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/G/31/img21/Watches2024/Nov/Category/Coop/French_connection_978x1432._SS800_QL85_FMpng_.png" alt="Product 5">
+            <h3>Product 5</h3>
+            <p>Price: $59.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="headphones.webp" alt="Product 6">
+            <h3>Product 6</h3>
+            <p>Price: $69.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/81Cqpk8zU7L._AC_UL480_FMwebp_QL65_.jpg" alt="Product 5">
+            <h3>Product 7</h3>
+            <p>Price: $59.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71uH5CfzG7L._SX679_.jpg" alt="Product 6">
+            <h3>Product 8</h3>
+            <p>Price: $69.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+                <li>Get to Know Us</li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Amazon Newsletter</a></li>
+                <li><a href="#">About Amazon</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Press Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Amazon Devices</a></li>
+                <li><a href="#">Amazon Science</a></li>
+            </ul>
+            <ul>
+                <li>Make Money with Us</li>
+                <li><a href="#">Sell products on Amazon</a></li>
+                <li><a href="#">Sell on Amazon Business</a></li>
+                <li><a href="#">Sell apps on Amazon</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Advertise Your Products</a></li>
+                <li><a href="#">Self-Publish with Us</a></li>
+                <li><a href="#">Host an Amazon Hub</a></li>
+                <li><a href="#">See More Make Money with Us</a></li>
+            </ul>
+            <ul>
+                <li>Amazon Payment Products</li>
+                <li><a href="#">Amzon Business Card</a></li>
+                <li><a href="#">Shop with Points</a></li>
+                <li><a href="#">Reload Your Balance</a></li>
+                <li><a href="#">Amazon Currency Converter</a></li>
+            </ul>
+            <ul>
+                <li>Let Us Help You</li>
+                <li><a href="#">Amazon and COVID-19</a></li>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Your Orders</a></li>
+                <li><a href="#">Shipping Rates & Policies</a></li>
+                <li><a href="#">Return & Replacements</a></li>
+                <li><a href="#">Manage Your Content and Devices</a></li>
+                <li><a href="#">Amazon Assistant</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+
+        <div class="foot-panel3">
+            <div class="logo">
+
+            </div>
+        </div>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2023, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>

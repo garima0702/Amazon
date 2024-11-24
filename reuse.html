@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="resuse.css">
+    <link rel="icon" href="i.png" type="image/png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg" alt="amazon"></a>
+        </div>
+        <div class="location-dropdown">
+            <select>
+                <option value="us">Select Your Location</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+                <option value="de">Germany</option>
+            </select>
+        </div>
+        <div class="search-container">
+            <select class="category-dropdown">
+                <option value="all">All</option>
+                <option value="books">Books</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="toys">Toys & Games</option>
+                <option value="grocery">Grocery</option>
+                <option value="computers">Computers</option>
+                <option value="health">Health & Personal Care</option>
+                <option value="sports">Sports & Outdoors</option>
+                <option value="automotive">Automotive</option>
+                <option value="baby">Baby</option>
+                <option value="music">Music</option>
+                <option value="video">Video Games</option>
+                <option value="pet">Pet Supplies</option>
+                <option value="tools">Tools & Home Improvement</option>
+            </select>
+            <div class="search-bar">
+                <input  id="search" type="text" placeholder="Search Amazon" />
+                <button type="submit">Search</button>
+            </div>
+        </div>
+        <div class="language-cart">
+            <select class="language-dropdown">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+            </select>
+            <a href="#" class="signin">Sign In</a>
+            <a href="#" class="login">Login</a>
+            <a href="#" class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                    <path d="M7 4V2H1v2h2l3.6 7.59-1.1 2.45C5.4 14.1 4 15.5 4 17c0 2.21 1.79 4 4 4s4-1.79 4-4H8c0 1.1-.9 2-2 2s-2-.9-2-2c0-.55.45-1 1-1h11c.55 0 1 .45 1 1s-.45 1-1 1h-1c0 1.1-.9 2-2 2s-2-.9-2-2h4c1.1 0 2-.9 2-2 0-.29-.06-.56-.16-.82l1.29-2.87H7zm0 2h9.9l1.6 3.5H7V6zm0 8h9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2H7c0 1.1-.9 2-2 2s-2-.9-2-2c0-1.1.9-2 2-2z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    <nav class="nav-links" id="topnav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Today's Deals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Mobiles</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="https://www.primevideo.com/">Prime</a></li>
+            <li><a href="#">Repair</a></li>
+            <li><a href="marketplace.html">Resale Marketplace</a></li>
+            <li><a href="#">Amazon Helper</a></li>
+            <li><a href="credits.html">credits</a></li>
+        </ul>
+    </nav>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="s5.jpg" alt="Image 1" class="active">
+            <img src="s6.jpg" alt="Image 2">
+            <img src="s1.jpg" alt="Image 3">
+            <img src="s2.jpg" alt="Image 4"> 
+           
+        </div>
+        <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="container">
+    
+        <h1>Repair Request</h1>
+        <form id="repairForm">
+            <label for="product_id">Product ID:</label>
+            <input type="text" id="product_id" name="product_id" required>
+
+            <label for="user_id">User  ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+
+            <label for="product_details">Product Details:</label>
+            <textarea id="repairDetails" name="repairDetails" required></textarea>
+
+            <button id="requestRepairButton" type="submit">Submit</button>
+            <p id="message"></p>
+        </form>
+        
+    </div>
+    
+</body>
+<script src="reuse.js"></script>
+<script src="script.js"></script>
+</html>

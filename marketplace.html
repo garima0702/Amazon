@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resale Marketplace</title>
+  <link rel="icon" href="i.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Simple styling for the marketplace and product cards */
+    .marketplace {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 30%; /* Adjusts the width to fit three cards in one row */
+  max-width: 250px; /* Ensures uniform card size */
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.product-card img {
+  width: 75%;
+  height: 250px; /* Increases image size */
+  object-fit:contain;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  margin: 5px 0;
+}
+.marketplace {
+   /* Adjust this value for the desired overlap */
+  position: relative; /* Ensures proper stacking in case of z-index */
+  z-index: 1; /* Brings the marketplace above the carousel if necessary */
+ 
+  
+  background-color: white;
+}
+.carousel-images img {
+    width: 100%;
+    height: 300px;
+    display: none;
+}
+
+
+    #heading{
+     /* Amazon orange */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-top: -120px; /* Adjust this value for the desired overlap */
+  position: relative; /* Ensures proper stacking in case of z-index */
+  z-index: 2; 
+
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg" alt="amazon"></a>
+    </div>
+    <div class="location-dropdown">
+        <select>
+            <option value="us">Select Your Location</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="de">Germany</option>
+        </select>
+    </div>
+    <div class="search-container">
+        <select class="category-dropdown">
+            <option value="all">All</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Kitchen</option>
+            <option value="toys">Toys & Games</option>
+            <option value="grocery">Grocery</option>
+            <option value="computers">Computers</option>
+            <option value="health">Health & Personal Care</option>
+            <option value="sports">Sports & Outdoors</option>
+            <option value="automotive">Automotive</option>
+            <option value="baby">Baby</option>
+            <option value="music">Music</option>
+            <option value="video">Video Games</option>
+            <option value="pet">Pet Supplies</option>
+            <option value="tools">Tools & Home Improvement</option>
+        </select>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Amazon" />
+            <button type="submit">Search</button>
+        </div>
+    </div>
+    <div class="language-cart">
+        <select class="language-dropdown">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+        </select>
+        <a href="#" class="signin">Sign In</a>
+        <a href="#" class="login">Login</a>
+        <a href="#" class="cart-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                <path d="M7 4V2H1v2h2l3.6 7.59-1.1 2.45C5.4 14.1 4 15.5 4 17c0 2.21 1.79 4 4 4s4-1.79 4-4H8c0 1.1-.9 2-2 2s-2-.9-2-2c0-.55.45-1 1-1h11c.55 0 1 .45 1 1s-.45 1-1 1h-1c0 1.1-.9 2-2 2s-2-.9-2-2h4c1.1 0 2-.9 2-2 0-.29-.06-.56-.16-.82l1.29-2.87H7zm0 2h9.9l1.6 3.5H7V6zm0 8h9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2H7c0 1.1-.9 2-2 2s-2-.9-2-2c0-1.1.9-2 2-2z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+<nav class="nav-links" id="topnav">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Today's Deals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Mobiles</a></li>
+        <li><a href="#">Home & Kitchen</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="https://www.primevideo.com/">Prime</a></li>
+        <li><a href="reuse.html">Repair</a></li>
+        <li><a href="#">Resale Marketplace</a></li>
+        <li><a href="helper.html">Amazon Helper</a></li>
+        <li><a href="credits.html">credits</a></li>
+    </ul>
+</nav>
+<div class="carousel">
+  <div class="carousel-images">
+      <img src="./c1.jpg" alt="Image 1" class="active">
+      <img src="./c2.jpg" alt="Image 2">
+      <img src="./c3.jpg" alt="Image 3">
+      <img src="./c4.jpg" alt="Image 4"> 
+      <img src="./c5.jpg" alt="Image 5">
+      <img src="./c6.jpg" alt="Image 6">
+      <img src="./c7.jpg" alt="Image 7">
+  </div>
+  <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+  <h1 id="heading">Resale Items</h1>
+  <div id="marketplace" class="marketplace">
+    <!-- Product cards will be populated here -->
+  </div>
+
+  <script>
+    // Fetch resale products from the API and display them
+    async function fetchResaleProducts() {
+      try {
+        // Make API request to fetch only gently used or refurbished products
+        const response = await fetch('http://localhost:5000/products/resale');
+        const resaleProducts = await response.json();
+
+        const marketplaceDiv = document.getElementById('marketplace');
+        
+        // Loop through the products and create HTML content for each one
+        resaleProducts.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.classList.add('product-card');
+          
+          const productImage = document.createElement('img');
+          productImage.src = product.image_url;
+          productImage.alt = product.name;
+          
+          const productName = document.createElement('h3');
+          productName.textContent = product.name;
+          
+          const productDescription = document.createElement('p');
+          productDescription.textContent = product.description;
+          
+          const productPrice = document.createElement('p');
+          productPrice.textContent = `$${product.price}`;
+          
+          // Append all product details to the product card
+          productCard.appendChild(productImage);
+          productCard.appendChild(productName);
+          productCard.appendChild(productDescription);
+          productCard.appendChild(productPrice);
+          
+          // Add the product card to the marketplace div
+          marketplaceDiv.appendChild(productCard);
+        });
+      } catch (error) {
+        console.error('Error fetching resale products:', error);
+      }
+    }
+
+    // Call the function to fetch and display products
+    fetchResaleProducts();
+  </script>
+   <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

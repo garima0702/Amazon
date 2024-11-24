@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Credit Modal</title>
+  <link rel="icon" href="i.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+    margin: 0;
+    position: relative; /* Required for positioning the canvas behind */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    position: relative; /* Position the container relative to the body */
+    z-index: 10; /* Ensure the container is above the fireworks */
+}
+
+/* Fireworks container */
+#fireworksCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So that clicks go through to the container */}
+    /* body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: white;
+    } */
+    /* Simple styling for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color:white;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      background-color:#ff9900 ;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color:#e68a00;
+    }
+  </style>
+</head>
+<body onload="openModal()"></body>
+
+    
+  <!-- Modal HTML -->
+  <div id="storeCreditModal" class="modal">
+    <div class="modal-content">
+      <h2>Choose Store Credit</h2>
+      <br>
+      <p>Get 10% more store credit for your return!</p>
+      <br>
+      <button id="applyCreditBtn">Apply Store Credit</button>
+      <br><br>
+      <p id="message"></p>
+      <br>
+      <p id="newCredits"></p>
+      <br>
+      <canvas id="fireworksCanvas"></canvas>
+
+    </div>
+  </div>
+
+  
+
+  <script>
+    // Show the modal
+    function openModal() {
+      document.getElementById('storeCreditModal').style.display = 'flex';
+    }
+
+    // Close the modal
+    function closeModal() {
+      document.getElementById('storeCreditModal').style.display = 'none';
+    }
+
+    // Handle Store Credit API call
+    document.getElementById('applyCreditBtn').addEventListener('click', async function() {
+      const userId = 1; // Example userId
+      const refundAmount = 100; // Example refund amount
+
+      try {
+        const response = await fetch('http://localhost:5000/returns/credit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userId, refundAmount }),
+        });
+
+        const data = await response.json();
+        
+        if (response.ok) {
+          document.getElementById('message').textContent = 'Store credit applied successfully!';
+          document.getElementById('newCredits').textContent = `New credits: $${data.newCredits}`;
+        } else {
+          document.getElementById('message').textContent = 'Failed to apply store credit.';
+        }
+      } catch (error) {
+        document.getElementById('message').textContent = 'Error occurred while applying store credit.';
+      }
+    });
+  </script>
+  <script>
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+  
+    // Set the canvas size to fill the window
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  
+    let fireworks = [];
+    let isFireworksActive = false; // Initially inactive
+  
+    function createFirework() {
+      const particles = [];
+      const numParticles = 100;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+  
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: x,
+          y: y,
+          radius: Math.random() * 3 + 1,
+          color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+          angle: Math.random() * Math.PI * 2,
+          speed: Math.random() * 3 + 1,
+          life: Math.random() * 100 + 50,
+        });
+      }
+  
+      return particles;
+    }
+  
+    function drawParticles(particles) {
+      particles.forEach((particle, index) => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.fill();
+        ctx.closePath();
+  
+        particle.x += Math.cos(particle.angle) * particle.speed;
+        particle.y += Math.sin(particle.angle) * particle.speed;
+        particle.life--;
+  
+        if (particle.life <= 0) {
+          particles.splice(index, 1);
+        }
+      });
+    }
+  
+    function animate() {
+      if (isFireworksActive) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+        if (Math.random() < 0.05) {
+          fireworks.push(createFirework());
+        }
+  
+        fireworks.forEach((particles, index) => {
+          drawParticles(particles);
+          if (particles.length === 0) {
+            fireworks.splice(index, 1);
+          }
+        });
+  
+        requestAnimationFrame(animate);
+      }
+    }
+  
+    function startFireworks() {
+      isFireworksActive = true;
+      animate();
+  
+      // Stop fireworks after 4 seconds
+      setTimeout(() => {
+        isFireworksActive = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, 4000);
+    }
+  
+    // Handle Store Credit API call
+    document.getElementById('applyCreditBtn').addEventListener('click', async function() {
+      const userId = 1; // Example userId
+      const refundAmount = 100; // Example refund amount
+  
+      try {
+        const response = await fetch('http://localhost:5000/returns/credit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userId, refundAmount }),
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          document.getElementById('message').textContent = 'Store credit applied successfully!';
+          document.getElementById('newCredits').textContent = `New credits: $${data.newCredits}`;
+          
+          // Start the fireworks animation on success
+          startFireworks();
+        } else {
+          document.getElementById('message').textContent = 'Failed to apply store credit.';
+        }
+      } catch (error) {
+        document.getElementById('message').textContent = 'Error occurred while applying store credit.';
+      }
+    });
+  </script>
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131921;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.logo img {
+    width: 100px; /* Adjust the width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.location-dropdown {
+    margin: 0 20px;
+}
+
+.location-dropdown select {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Allow it to grow and take available space */
+    min-width: 300px; /* Minimum width for search area */
+}
+
+.category-dropdown {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 50px; /* Space between dropdown and search bar */
+    width:60px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 400px; /* Default width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #febd69;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.language-cart {
+    display: flex;
+    align-items: center;
+}
+
+.language-dropdown {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 20px; /* Space between dropdown and links */
+}
+
+.signin,
+.login {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.cart-icon {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    background-color: #232f3e;
+    padding: 10px 20px;
+
+    
+}
+
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin-top: 0px;
+
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin:auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 450px;
+    display: none;
+}
+
+.carousel-images img.active {
+    display: block;
+}
+
+.arrow {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Set 4 columns */
+    gap: 20px;
+    padding: 20px;
+    margin-top: -230px; /* Adjust this value to control the overlap */
+    position:relative; /* Ensure it positions itself relative to the parent */
+    z-index: 1; /* Ensure cards appear above the carousel */
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: 200px; /* Maintains the aspect ratio of the image */
+    object-fit: contain; /* Ensures the image is contained within its container */
+    border-radius: 5px;
+    
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 1em;
+    color: #333;
+}
+
+.card button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #e68a00;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+/** footer **/
+.foot-panel1 {
+    background-color: #37475a;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    margin-top: 30px;
+}
+
+ul li,
+li a {
+    display: block;
+    text-decoration: none;
+    list-style: none;
+}
+
+li a {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel3 {
+    border-top: 0.5px solid gray;
+    height: 70px;
+    background-color: #232F3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-panel3 .logo {
+    background-image: url(/Images/amazon_logo.png);
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+}
+
+.foot-panel4 {
+    background-color: #131A22;
+    color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pages a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.pages a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .search-container {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 10px; /* Space between location and search */
+    }
+
+    .search-bar input {
+        width: 100%; /* Full width for input */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: flex-start; /* Align links to the left */
+    }
+
+    .nav-links li {
+        margin-bottom: 10px; /* Space between links */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .logo a {
+        font-size: 20px; /* Adjust logo size */
+    }
+
+    .category-dropdown,
+    .language-dropdown {
+        padding: 8px; /* Adjust dropdown padding */
+    }
+
+    .search-bar button {
+        padding: 8px; /* Adjust button padding */
+    }
+}
